@@ -1,0 +1,56 @@
+
+**** 02/19/23 12:36:19 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Freq_5M"  [ D:\_Workspace\UCURRENT\SIM\CurrentSensor-PSpiceFiles\SCHEMATIC1\Freq_5M.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Freq_5M.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\17.4.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 1000 10 100k
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CURRENTSENSOR
+X_U1         N15068 N14871 N14919 N14931 N14943 OPA388
+V_V2         N14919 0 2.5
+V_V4         0 N14931 2.5
+R_R1         0 N14871  2k TC=0,0 
+R_R2         N14871 N14943  18k TC=0,0 
+R_R3         0 N15068  10 TC=0,0 
+R_R4         N15048 N15062  99.99k TC=0,0 
+X_U2         N14943 N15589 N14919 N14931 N15607 OPA388
+R_R5         N15589 N15607  18k TC=0,0 
+R_R6         0 N15589  2k TC=0,0 
+V_V5         N15062 N15048 DC 0Vdc AC 100m 
+
+**** RESUMING Freq_5M.cir ****
+.END
+
+INFO(ORPSIM-16573): AC analysis does not support expression evaluation at each frequency. ABM devices with non-linear operations will be evaluated only at bias point.
+
+ERROR(ORPSIM-15142): Node N15048 is floating
+
+ERROR(ORPSIM-15142): Node N15062 is floating
+

@@ -1,0 +1,382 @@
+
+**** 02/19/23 12:55:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Freq_20k_200k"  [ D:\_Workspace\UCURRENT\SIM\CurrentSensor-PSpiceFiles\SCHEMATIC1\Freq_20k_200k.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Freq_20k_200k.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\17.4.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 1000 20k 200k
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CURRENTSENSOR
+X_U1         N15300 N14871 N14919 N14871 N14943 OPA388
+V_V2         N14919 0 2.5
+V_V4         0 N14871 2.5
+R_R1         0 N14871  2k TC=0,0 
+R_R2         N14871 N14943  18k TC=0,0 
+R_R3         0 N15062  10 TC=0,0 
+R_R4         N15048 0  99.99k TC=0,0 
+X_U2         N14943 N15589 N14919 N14871 N15607 OPA388
+R_R5         N15589 N15607  18k TC=0,0 
+R_R6         0 N15589  2k TC=0,0 
+V_V5         N15062 N15048 DC 0Vdc AC 100m 
+R_R7         N15062 N15300  330 TC=0,0 
+C_C1         N15589 N15607  10n  TC=0,0 
+C_C2         N14871 N14943  10n  TC=0,0 
+
+**** RESUMING Freq_20k_200k.cir ****
+.END
+
+INFO(ORPSIM-16573): AC analysis does not support expression evaluation at each frequency. ABM devices with non-linear operations will be evaluated only at bias point.
+
+**** 02/19/23 12:55:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Freq_20k_200k"  [ D:\_Workspace\UCURRENT\SIM\CurrentSensor-PSpiceFiles\SCHEMATIC1\Freq_20k_200k.sim ] 
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U2.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+**** 02/19/23 12:55:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Freq_20k_200k"  [ D:\_Workspace\UCURRENT\SIM\CurrentSensor-PSpiceFiles\SCHEMATIC1\Freq_20k_200k.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.BB_SW      X_U1.ESD_SW     X_U1.OL_SW      X_U1.OR_SW      
+         RON   50              50               1.000000E-03     .01         
+        ROFF    1.000000E+12    1.000000E+12    1.000000E+12    1.000000E+12 
+         VON     .7              .5              .9             1.000000E-03 
+        VOFF    0                .1              .8             0            
+
+
+               X_U2.BB_SW      X_U2.ESD_SW     X_U2.OL_SW      X_U2.OR_SW      
+         RON   50              50               1.000000E-03     .01         
+        ROFF    1.000000E+12    1.000000E+12    1.000000E+12    1.000000E+12 
+         VON     .7              .5              .9             1.000000E-03 
+        VOFF    0                .1              .8             0            
+
+
+Starting pseudo-transient algorithm.
+
+INFO(ORPSIM-16594): To improve Pseudotransient Convergence and Performance, set following options to relax stabilization criteria for capacitor currents and inductor voltages: PTRANABSTOL=1e-5, PTRANVNTOL=1e-4
+
+ERROR -- Convergence problem in bias point calculation
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14871)   -2.5000 (N14919)    2.5000 (N14943)    2.4985 (N15048)-300.0E-12     
+
+(N15062)-300.0E-12 (N15300)-10.20E-09 (N15589)     .2685 (N15607)    2.5001     
+
+(X_U1.MID)-958.9E-27                  (X_U2.MID)-2.503E-24                      
+
+(X_U1.ESDn)   -2.5000                 (X_U1.ESDp)-10.20E-09                     
+
+(X_U1.N001)-246.6E-12                 (X_U1.N002)-250.0E-09                     
+
+(X_U1.N003) 250.0E-09                 (X_U1.N004) 253.5E-06                     
+
+(X_U1.N005) 250.1E-09                 (X_U1.N006)-285.6E-15                     
+
+(X_U1.N007)-1.023E-15                 (X_U1.N008) 1.023E-15                     
+
+(X_U1.N009)   60.0000                 (X_U1.N010)   17.0000                     
+
+(X_U1.N011)    -.4050                 (X_U1.N012)-250.1E-09                     
+
+(X_U1.N013)    2.4855                 (X_U1.N014)    2.4855                     
+
+(X_U1.N015)     .0130                 (X_U1.N016)     .0130                     
+
+(X_U1.N017)-958.9E-27                 (X_U1.N018)-958.9E-27                     
+
+(X_U1.N019)   15.5340                 (X_U1.N020)-958.9E-27                     
+
+(X_U1.N021)-958.9E-27                 (X_U1.N022)-958.9E-27                     
+
+(X_U1.N023)-958.9E-27                 (X_U1.N024)-958.9E-27                     
+
+(X_U1.N025)-958.9E-27                 (X_U1.N026)   -2.4845                     
+
+(X_U1.N027)   -2.4845                 (X_U1.N028)   -8.0014                     
+
+(X_U1.N029)   -8.0014                 (X_U1.N030)   -8.0014                     
+
+(X_U1.N031)   15.5090                 (X_U1.N032)   15.5090                     
+
+(X_U1.N033)   12.9990                 (X_U1.N034)-958.9E-27                     
+
+(X_U1.N035)-958.9E-27                 (X_U1.N036)-250.4E-09                     
+
+(X_U1.N037)-280.4E-09                 (X_U1.N038)  -60.0000                     
+
+(X_U1.N039)-280.4E-09                 (X_U1.N040) 189.8E-09                     
+
+(X_U1.N041)  -17.0000                 (X_U1.N042)   25.1000                     
+
+(X_U1.N043)   25.1000                 (X_U1.N044)    1.0000                     
+
+(X_U1.N045)-10.20E-09                 (X_U1.N046)-10.20E-09                     
+
+(X_U1.N047) 189.8E-09                 (X_U1.N048) 189.8E-09                     
+
+(X_U1.N049)  250.0000                 (X_U1.N050)   15.5340                     
+
+(X_U1.N051)    2.6000                 (X_U1.N052)-470.7E-12                     
+
+(X_U1.N053)-470.7E-12                 (X_U1.N054)   -2.6000                     
+
+(X_U1.N055)   -2.5000                 (X_U1.N056)     .2776                     
+
+(X_U1.N057)    2.4985                 (X_U1.N058)    1.3001                     
+
+(X_U1.N059)    1.3001                 (X_U1.N060)   15.5330                     
+
+(X_U1.N061)    8.1748                 (X_U1.N062)    2.4986                     
+
+(X_U1.N063)    2.7307                 (X_U1.N064)   32.4690                     
+
+(X_U1.N065)   32.4690                 (X_U1.N066)   32.3780                     
+
+(X_U1.N067)   32.3780                 (X_U1.N068)   32.3780                     
+
+(X_U1.N069)   32.3750                 (X_U1.N070)    8.5874                     
+
+(X_U1.N071)   32.3750                 (X_U1.N072)   32.3750                     
+
+(X_U1.N073)   32.3710                 (X_U1.N074)     .0259                     
+
+(X_U1.N075)   32.3420                 (X_U1.N076)    2.4985                     
+
+(X_U1.N077)   15.5320                 (X_U1.N078)   37.2100                     
+
+(X_U1.N079)   32.3730                 (X_U1.N080)   32.3780                     
+
+(X_U1.N081)   32.3750                 (X_U1.N082)    2.5000                     
+
+(X_U1.N083)-958.9E-27                 (X_U1.N084)   -2.5000                     
+
+(X_U1.VCLP)    2.4986                 (X_U2.ESDn)     .2685                     
+
+(X_U2.ESDp)    2.4985                 (X_U2.N001)-246.6E-12                     
+
+(X_U2.N002)-250.0E-09                 (X_U2.N003) 250.0E-09                     
+
+(X_U2.N004) 253.5E-06                 (X_U2.N005) 250.1E-09                     
+
+(X_U2.N006) 69.96E-06                 (X_U2.N007) 249.2E-09                     
+
+(X_U2.N008)-249.2E-09                 (X_U2.N009)   60.0000                     
+
+(X_U2.N010)   17.0000                 (X_U2.N011)    -.4050                     
+
+(X_U2.N012)-250.1E-09                 (X_U2.N013)    2.4871                     
+
+(X_U2.N014)    2.4871                 (X_U2.N015)     .0130                     
+
+(X_U2.N016)     .0130                 (X_U2.N017)-2.503E-24                     
+
+(X_U2.N018)-2.503E-24                 (X_U2.N019)   15.5350                     
+
+(X_U2.N020)-2.503E-24                 (X_U2.N021)-2.503E-24                     
+
+(X_U2.N022)-2.503E-24                 (X_U2.N023)-2.503E-24                     
+
+(X_U2.N024)-2.503E-24                 (X_U2.N025)-2.503E-24                     
+
+(X_U2.N026)   -2.4845                 (X_U2.N027)   -2.4845                     
+
+(X_U2.N028)   -7.9999                 (X_U2.N029)   -7.9999                     
+
+(X_U2.N030)   -7.9999                 (X_U2.N031)   15.5100                     
+
+(X_U2.N032)   15.5100                 (X_U2.N033)   13.0000                     
+
+(X_U2.N034)-2.503E-24                 (X_U2.N035)-2.503E-24                     
+
+(X_U2.N036)    2.4985                 (X_U2.N037)    2.4985                     
+
+(X_U2.N038)  -60.0000                 (X_U2.N039)    2.4985                     
+
+(X_U2.N040)    2.4985                 (X_U2.N041)  -17.0000                     
+
+(X_U2.N042)   25.1000                 (X_U2.N043)   25.1000                     
+
+(X_U2.N044)    1.0000                 (X_U2.N045)    2.4985                     
+
+(X_U2.N046)    2.4985                 (X_U2.N047)    2.4985                     
+
+(X_U2.N048)    2.4985                 (X_U2.N049)  223.0000                     
+
+(X_U2.N050)   15.5350                 (X_U2.N051)    2.6000                     
+
+(X_U2.N052)-470.7E-12                 (X_U2.N053)-470.7E-12                     
+
+(X_U2.N054)   -2.6000                 (X_U2.N055)     .2685                     
+
+(X_U2.N056)     .1342                 (X_U2.N057)    2.5001                     
+
+(X_U2.N058)    5.3390                 (X_U2.N059)    5.3390                     
+
+(X_U2.N060)   15.5340                 (X_U2.N061)    8.1756                     
+
+(X_U2.N062)    2.5001                 (X_U2.N063)   11.2120                     
+
+(X_U2.N064)   31.4120                 (X_U2.N065)   31.4120                     
+
+(X_U2.N066)   29.5940                 (X_U2.N067)   29.5940                     
+
+(X_U2.N068)   29.8850                 (X_U2.N069)   29.8820                     
+
+(X_U2.N070)    7.9255                 (X_U2.N071)   29.8790                     
+
+(X_U2.N072)   29.8790                 (X_U2.N073)   29.8760                     
+
+(X_U2.N074)     .0239                 (X_U2.N075)   29.8490                     
+
+(X_U2.N076)    2.5001                 (X_U2.N077)   15.5340                     
+
+(X_U2.N078)   34.6320                 (X_U2.N079)   29.4990                     
+
+(X_U2.N080)   29.8880                 (X_U2.N081)   29.8790                     
+
+(X_U2.N082)    2.5000                 (X_U2.N083)-2.503E-24                     
+
+(X_U2.N084)   -2.5000                 (X_U2.VCLP)    2.5001                     
+
+(X_U1.CLAMP)   15.5340                (X_U1.SW_OL)    1.0000                    
+
+(X_U1.VCC_B)    2.5000                (X_U1.VEE_B)   -2.5000                    
+
+(X_U1.VIMON)     .2777                (X_U2.CLAMP)   15.5350                    
+
+(X_U2.SW_OL)    1.0000                (X_U2.VCC_B)    2.5000                    
+
+(X_U2.VEE_B)   -2.5000                (X_U2.VIMON)     .1343                    
+
+(X_U1.VOUT_S)    2.4985               (X_U1.VSENSE)   15.5340                   
+
+(X_U1.Xe_n.5)    0.0000               (X_U2.VOUT_S)    2.5001                   
+
+(X_U2.VSENSE)   15.5350               (X_U2.Xe_n.5)    0.0000                   
+
+(X_U1.VCC_CLP)    2.4855              (X_U1.VEE_CLP)   -2.4845                  
+
+(X_U1.Xi_nn.3)    0.0000              (X_U1.Xi_nn.5)    0.0000                  
+
+(X_U1.Xi_np.3)    0.0000              (X_U1.Xi_np.5)    0.0000                  
+
+(X_U2.VCC_CLP)    2.4871              (X_U2.VEE_CLP)   -2.4845                  
+
+(X_U2.Xi_nn.3)    0.0000              (X_U2.Xi_nn.5)    0.0000                  
+
+(X_U2.Xi_np.3)    0.0000              (X_U2.Xi_np.5)    0.0000                  
+
+(X_U1.CL_CLAMP)    2.4986             (X_U2.CL_CLAMP)    2.5001                 
+
+(X_U1.CLAW_CLAMP)    2.4986           (X_U2.CLAW_CLAMP)    2.5001           
+
+
+  These voltages failed to converge:
+
+    V(N15589)                 =   250.02mV  \   268.52mV
+    V(X_U1.N059)              =     15.42V  \     1.300V
+    V(X_U1.N058)              =     32.38V  \     1.300V
+    V(X_U1.N063)              =     32.38V  \     2.731V
+    V(X_U1.N064)              =     32.38V  \     32.47V
+    V(X_U1.N078)              =     32.38V  \     37.21V
+    V(X_U1.N065)              =     32.38V  \     32.47V
+    V(X_U2.N055)              =   250.02mV  \   268.52mV
+    V(X_U2.ESDn)              =   250.02mV  \   268.52mV
+    V(X_U2.N056)              =   125.01mV  \   134.19mV
+    V(X_U2.VIMON)             =   125.01mV  \   134.31mV
+    V(X_U2.N059)              =     14.15V  \     5.339V
+    V(X_U2.N058)              =     29.72V  \     5.339V
+    V(X_U2.N049)              =    224.85V  \    223.00V
+    V(X_U2.N075)              =     29.69V  \     29.85V
+    V(X_U2.N063)              =     29.72V  \     11.21V
+    V(X_U2.N064)              =     29.72V  \     31.41V
+    V(X_U2.N078)              =     29.72V  \     34.63V
+    V(X_U2.N067)              =     29.72V  \     29.59V
+    V(X_U2.N069)              =     29.72V  \     29.88V
+    V(X_U2.N070)              =     7.883V  \     7.926V
+    V(X_U2.N071)              =     29.72V  \     29.88V
+    V(X_U2.N065)              =     29.72V  \     31.41V
+    V(X_U2.N066)              =     29.72V  \     29.59V
+    V(X_U2.N079)              =     29.72V  \     29.50V
+    V(X_U2.N068)              =     29.72V  \     29.89V
+    V(X_U2.N080)              =     29.72V  \     29.89V
+    V(X_U2.N073)              =     29.72V  \     29.88V
+    V(X_U2.N074)              =    23.75mV  \    23.88mV
+    V(X_U2.N072)              =     29.72V  \     29.88V
+    V(X_U2.N081)              =     29.72V  \     29.88V
+
+  These supply currents failed to converge:
+
+    I(X_U1.E4)                =         0A  \   -3.554pA
+    I(X_U1.E5)                =   -2.499pA  \   -3.622pA
+    I(X_U1.E1)                =   -2.464nA  \   277.17nA
+    I(X_U2.E4)                =         0A  \  -162.07pA
+    I(X_U2.E5)                =   -2.500pA  \   -5.739nA
+    I(X_U2.E1)                =   -52.52pA  \   519.70nA
+    I(V_V2)                   =   -4.203mA  \   -4.212mA
+    I(X_U2.V4)                =   125.01uA  \   134.19uA
+    I(X_U1.H1)                =  -625.58fA  \    1.243uA
+    I(X_U1.H3)                =         0A  \    54.16pA
+    I(X_U2.H1)                =  -125.01fA  \    1.167uA
+    I(X_U2.H3)                =         0A  \   132.90pA
+
+**** Interrupt ****
